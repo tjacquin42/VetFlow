@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button, Input, Card } from '@/components/ui';
+import { Button, FormInput, Radio, RadioField, RadioGroup, Label, Switch, SwitchField } from '@vetflow/ui';
+import { Card } from '@/components/ui';
 import { animalInfoSchema, type AnimalInfo } from '@vetflow/shared';
-import { cn } from '@/lib/utils';
 
 export interface AnimalInfoFormProps {
   onNext: (data: AnimalInfo) => void;
@@ -59,7 +59,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
     <Card title="Informations de l'animal" subtitle="Étape 1/2">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Nom (optionnel) */}
-        <Input
+        <FormInput
+          name="name"
           label="Nom de l'animal"
           type="text"
           value={formData.name || ''}
@@ -69,44 +70,30 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Espèce */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-3">
             Espèce <span className="text-danger-500">*</span>
           </label>
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              type="button"
-              onClick={() => setFormData({ ...formData, species: 'dog' })}
-              className={cn(
-                'p-4 rounded-lg border-2 transition-all',
-                formData.species === 'dog'
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
-              )}
-            >
-              <div className="text-3xl mb-1">🐕</div>
-              <div className="font-medium">Chien</div>
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormData({ ...formData, species: 'cat' })}
-              className={cn(
-                'p-4 rounded-lg border-2 transition-all',
-                formData.species === 'cat'
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
-              )}
-            >
-              <div className="text-3xl mb-1">🐈</div>
-              <div className="font-medium">Chat</div>
-            </button>
-          </div>
+          <RadioGroup
+            value={formData.species}
+            onChange={(value) => setFormData({ ...formData, species: value as 'dog' | 'cat' })}
+          >
+            <RadioField>
+              <Radio value="dog" color="blue" />
+              <Label>🐕 Chien</Label>
+            </RadioField>
+            <RadioField>
+              <Radio value="cat" color="blue" />
+              <Label>🐈 Chat</Label>
+            </RadioField>
+          </RadioGroup>
           {errors.species && (
             <p className="text-sm text-danger-500 mt-1">{errors.species}</p>
           )}
         </div>
 
         {/* Poids */}
-        <Input
+        <FormInput
+          name="weight"
           label="Poids actuel"
           type="number"
           value={formData.weight || ''}
@@ -128,7 +115,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
             Âge <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
-            <Input
+            <FormInput
+              name="ageYears"
               label="Années"
               type="number"
               value={formData.ageYears || ''}
@@ -142,7 +130,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               max={30}
               error={errors.ageYears}
             />
-            <Input
+            <FormInput
+              name="ageMonths"
               label="Mois"
               type="number"
               value={formData.ageMonths || ''}
@@ -160,37 +149,14 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
         </div>
 
         {/* Stérilisé */}
-        <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
-            Stérilisé(e) ? <span className="text-danger-500">*</span>
-          </label>
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              type="button"
-              onClick={() => setFormData({ ...formData, isNeutered: true })}
-              className={cn(
-                'p-3 rounded-lg border-2 transition-all font-medium',
-                formData.isNeutered
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
-              )}
-            >
-              Oui
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormData({ ...formData, isNeutered: false })}
-              className={cn(
-                'p-3 rounded-lg border-2 transition-all font-medium',
-                !formData.isNeutered
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
-              )}
-            >
-              Non
-            </button>
-          </div>
-        </div>
+        <SwitchField>
+          <Label>Animal stérilisé(e)</Label>
+          <Switch
+            color="blue"
+            checked={formData.isNeutered}
+            onChange={(checked) => setFormData({ ...formData, isNeutered: checked })}
+          />
+        </SwitchField>
 
         {/* Score corporel */}
         <div>
@@ -226,7 +192,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Submit button */}
         <div className="pt-4">
-          <Button type="submit" variant="primary" size="lg" className="w-full">
+          <Button type="submit" color="blue" className="w-full">
             Continuer →
           </Button>
         </div>

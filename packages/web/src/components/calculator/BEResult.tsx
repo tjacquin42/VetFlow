@@ -1,4 +1,5 @@
-import { Button, Card } from '@/components/ui';
+import { Button, Heading, Text, Badge } from '@vetflow/ui';
+import { Card } from '@/components/ui';
 import type { AnimalInfo, EnergyResult } from '@vetflow/shared';
 
 export interface BEResultProps {
@@ -20,15 +21,15 @@ export function BEResult({
           <div className="text-4xl mb-2">
             {animalInfo.species === 'dog' ? '🐕' : '🐈'}
           </div>
-          <h3 className="text-xl font-semibold text-secondary-900">
+          <Heading level={3}>
             {animalInfo.name || 'Animal sans nom'}
-          </h3>
-          <p className="text-secondary-600 mt-1">
+          </Heading>
+          <Text className="mt-1">
             {animalInfo.species === 'dog' ? 'Chien' : 'Chat'} • {animalInfo.weight} kg
             {' • '}
             {animalInfo.ageYears} ans
             {animalInfo.ageMonths > 0 && ` ${animalInfo.ageMonths} mois`}
-          </p>
+          </Text>
         </div>
       </Card>
 
@@ -96,48 +97,45 @@ export function BEResult({
 
       {/* Information Card */}
       <Card>
-        <h4 className="font-semibold text-secondary-900 mb-3">
+        <Heading level={4}>
           📊 Que signifie ce résultat ?
-        </h4>
-        <div className="space-y-2 text-sm text-secondary-600">
-          <p>
+        </Heading>
+        <div className="space-y-2 mt-3">
+          <Text>
             <strong>RER (Resting Energy Requirement)</strong> : C'est l'énergie
             dont l'animal a besoin au repos absolu, sans activité.
-          </p>
-          <p>
+          </Text>
+          <Text>
             <strong>MER (Maintenance Energy Requirement)</strong> : C'est le
             besoin énergétique total quotidien, calculé en multipliant le RER
             par un facteur qui dépend de l'activité, du statut, et de l'objectif.
-          </p>
-          <p className="pt-2 border-t border-secondary-200">
-            <strong>Prochaine étape :</strong> Utilisez ce résultat ({result.mer} kcal/jour)
+          </Text>
+          <Text className="pt-2 border-t border-secondary-200">
+            <strong>Prochaine étape :</strong> Utilisez ce résultat (<Badge color="blue">{result.mer} kcal/jour</Badge>)
             pour calculer la quantité de croquettes nécessaire en fonction de
             leur apport énergétique.
-          </p>
+          </Text>
         </div>
       </Card>
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3">
         <Button
-          variant="ghost"
-          size="lg"
+          plain
           onClick={onNewCalculation}
           className="flex-1"
         >
           🔄 Nouveau calcul
         </Button>
         <Button
-          variant="secondary"
-          size="lg"
+          outline
           onClick={() => window.print()}
           className="flex-1"
         >
           🖨️ Imprimer
         </Button>
         <Button
-          variant="primary"
-          size="lg"
+          color="blue"
           disabled
           className="flex-1"
         >

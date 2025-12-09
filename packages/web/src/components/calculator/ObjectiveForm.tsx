@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Button, Card } from '@/components/ui';
+import { Button } from '@vetflow/ui';
+import { Card } from '@/components/ui';
 import {
   objectiveDataSchema,
   type AnimalInfo,
@@ -167,14 +168,13 @@ export function ObjectiveForm({
         <div className="pt-4 flex gap-3">
           <Button
             type="button"
-            variant="ghost"
-            size="lg"
+            plain
             onClick={onBack}
             className="flex-1"
           >
             ← Retour
           </Button>
-          <Button type="submit" variant="primary" size="lg" className="flex-1">
+          <Button type="submit" color="blue" className="flex-1">
             Calculer
           </Button>
         </div>

@@ -1,7 +1,8 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { ComponentDemo } from './pages/ComponentDemo';
 import { Calculator } from './pages/Calculator';
-import { Button, Card } from './components/ui';
+import { Button } from '@vetflow/ui';
+import { Card } from './components/ui';
 
 function Home() {
   return (
@@ -30,7 +31,7 @@ function Home() {
                 quelques étapes simples.
               </p>
               <Link to="/calculator">
-                <Button variant="primary" size="lg" className="w-full">
+                <Button color="blue" className="w-full">
                   Ouvrir le calculateur →
                 </Button>
               </Link>
@@ -48,7 +49,7 @@ function Home() {
                 interactifs.
               </p>
               <Link to="/demo">
-                <Button variant="secondary" size="lg" className="w-full">
+                <Button outline className="w-full">
                   Voir les composants →
                 </Button>
               </Link>
