@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm --filter @vetflow/shared build && pnpm --filter @vetflow/web build",
+  "buildCommand": "pnpm run build:shared && pnpm run build:web",
   "devCommand": "pnpm --filter @vetflow/web dev",
   "installCommand": "pnpm install",
   "outputDirectory": "packages/web/dist",
