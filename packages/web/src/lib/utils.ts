@@ -6,7 +6,7 @@
  * Merge multiple className strings
  * Useful for conditional styling with Tailwind
  */
-export function cn(...classes: (string | undefined | null | false)[]): string {
+export function cn(...classes: (string | number | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(' ');
 }
 

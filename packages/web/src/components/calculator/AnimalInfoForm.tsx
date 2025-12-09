@@ -29,7 +29,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
     if (!validation.success) {
       const fieldErrors: Record<string, string> = {};
-      validation.error.errors.forEach((err) => {
+      validation.error.errors.forEach((err: { path: (string | number)[]; message: string }) => {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }

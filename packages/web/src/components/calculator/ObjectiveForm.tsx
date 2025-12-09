@@ -37,7 +37,7 @@ export function ObjectiveForm({
 
     if (!validation.success) {
       const fieldErrors: Record<string, string> = {};
-      validation.error.errors.forEach((err) => {
+      validation.error.errors.forEach((err: { path: (string | number)[]; message: string }) => {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }
@@ -73,7 +73,7 @@ export function ObjectiveForm({
           </label>
           <div className="grid grid-cols-2 gap-3">
             {(Object.keys(GOAL_LABELS) as Array<keyof typeof GOAL_LABELS>).map(
-              (goal) => (
+              (goal: keyof typeof GOAL_LABELS) => (
                 <button
                   key={goal}
                   type="button"
@@ -105,7 +105,7 @@ export function ObjectiveForm({
               Object.keys(ACTIVITY_LEVEL_LABELS) as Array<
                 keyof typeof ACTIVITY_LEVEL_LABELS
               >
-            ).map((level) => (
+            ).map((level: keyof typeof ACTIVITY_LEVEL_LABELS) => (
               <button
                 key={level}
                 type="button"
@@ -138,7 +138,7 @@ export function ObjectiveForm({
               Object.keys(PHYSIOLOGICAL_STATUS_LABELS) as Array<
                 keyof typeof PHYSIOLOGICAL_STATUS_LABELS
               >
-            ).map((status) => (
+            ).map((status: keyof typeof PHYSIOLOGICAL_STATUS_LABELS) => (
               <button
                 key={status}
                 type="button"
