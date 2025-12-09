@@ -1,0 +1,29 @@
+{
+  "name": "vetflow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VetFlow - Veterinary nutrition calculator for web and mobile",
+  "author": "VetFlow Team",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter @vetflow/web dev",
+    "dev:mobile": "pnpm --filter @vetflow/mobile start",
+    "build:web": "pnpm --filter @vetflow/web build",
+    "build:shared": "pnpm --filter @vetflow/shared build",
+    "lint": "pnpm --recursive lint",
+    "type-check": "pnpm --recursive type-check",
+    "clean": "pnpm --recursive clean"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.25.0"
+}
