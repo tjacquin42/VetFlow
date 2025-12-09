@@ -13,6 +13,7 @@
     "dev:mobile": "pnpm --filter @vetflow/mobile start",
     "build:web": "pnpm --filter @vetflow/web build",
     "build:shared": "pnpm --filter @vetflow/shared build",
+    "build:vercel": "pnpm --filter @vetflow/shared build && pnpm --filter @vetflow/web build",
     "lint": "pnpm --recursive lint",
     "type-check": "pnpm --recursive type-check",
     "clean": "pnpm --recursive clean"
