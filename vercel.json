@@ -3,7 +3,7 @@
   "buildCommand": "pnpm -w build:vercel",
   "devCommand": "pnpm --filter @vetflow/web dev",
   "installCommand": "pnpm install",
-  "outputDirectory": "packages/web/dist",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
