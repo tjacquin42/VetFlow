@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Button, FormInput, FormSelect } from '@vetflow/ui';
-import { Card, Modal, Spinner } from '@/components/ui';
+import { Button, Input, Card, Select, Modal, Spinner } from '@/components/ui';
 
 export function ComponentDemo() {
   // States for interactive examples
@@ -8,6 +7,7 @@ export function ComponentDemo() {
   const [numberValue, setNumberValue] = useState('10');
   const [selectValue, setSelectValue] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="min-h-screen bg-secondary-50 py-12">
@@ -37,37 +37,49 @@ export function ComponentDemo() {
                   Variants
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  <Button color="blue">Primary (Blue)</Button>
-                  <Button outline>Secondary (Outline)</Button>
-                  <Button plain>Ghost (Plain)</Button>
-                  <Button color="red">Danger (Red)</Button>
+                  <Button variant="primary">Primary</Button>
+                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="ghost">Ghost</Button>
+                  <Button variant="danger">Danger</Button>
                 </div>
               </div>
 
-              {/* Colors */}
+              {/* Sizes */}
               <div>
                 <h3 className="text-lg font-medium text-secondary-700 mb-3">
-                  Colors
+                  Sizes
                 </h3>
                 <div className="flex flex-wrap items-center gap-3">
-                  <Button color="dark/zinc">Dark</Button>
-                  <Button color="blue">Blue</Button>
-                  <Button color="red">Red</Button>
-                  <Button color="green">Green</Button>
+                  <Button variant="primary" size="sm">
+                    Small
+                  </Button>
+                  <Button variant="primary" size="md">
+                    Medium
+                  </Button>
+                  <Button variant="primary" size="lg">
+                    Large
+                  </Button>
                 </div>
               </div>
 
-              {/* Disabled State */}
+              {/* Loading State */}
               <div>
                 <h3 className="text-lg font-medium text-secondary-700 mb-3">
-                  Disabled State
+                  Loading State
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  <Button color="blue">
-                    Bouton actif
+                  <Button
+                    variant="primary"
+                    isLoading={isLoading}
+                    onClick={() => {
+                      setIsLoading(true);
+                      setTimeout(() => setIsLoading(false), 2000);
+                    }}
+                  >
+                    {isLoading ? 'Chargement...' : 'Cliquez pour charger'}
                   </Button>
-                  <Button color="blue" disabled>
-                    Bouton désactivé
+                  <Button variant="primary" disabled>
+                    Disabled
                   </Button>
                 </div>
               </div>
@@ -81,8 +93,7 @@ export function ComponentDemo() {
             </h2>
 
             <div className="grid gap-6 max-w-2xl">
-              <FormInput
-                name="name"
+              <Input
                 label="Nom de l'animal"
                 type="text"
                 value={textValue}
@@ -90,8 +101,7 @@ export function ComponentDemo() {
                 placeholder="Ex: Max"
               />
 
-              <FormInput
-                name="weight"
+              <Input
                 label="Poids"
                 type="number"
                 value={numberValue}
@@ -103,8 +113,7 @@ export function ComponentDemo() {
                 required
               />
 
-              <FormInput
-                name="email"
+              <Input
                 label="Email"
                 type="email"
                 value=""
@@ -113,8 +122,7 @@ export function ComponentDemo() {
                 hint="Nous ne partagerons jamais votre email"
               />
 
-              <FormInput
-                name="error-demo"
+              <Input
                 label="Champ avec erreur"
                 type="text"
                 value=""
@@ -162,10 +170,10 @@ export function ComponentDemo() {
                 title="Card with Footer"
                 footer={
                   <div className="flex gap-2">
-                    <Button plain>
+                    <Button variant="ghost" size="sm">
                       Annuler
                     </Button>
-                    <Button color="blue">
+                    <Button variant="primary" size="sm">
                       Valider
                     </Button>
                   </div>
@@ -191,21 +199,19 @@ export function ComponentDemo() {
             </h2>
 
             <div className="grid gap-6 max-w-2xl">
-              <FormSelect
-                name="species"
+              <Select
                 label="Espèce"
                 options={[
                   { value: 'dog', label: 'Chien' },
                   { value: 'cat', label: 'Chat' },
                 ]}
                 value={selectValue}
-                onChange={(e) => setSelectValue(e.target.value)}
+                onChange={setSelectValue}
                 placeholder="Sélectionnez une espèce"
                 required
               />
 
-              <FormSelect
-                name="objective"
+              <Select
                 label="Objectif"
                 options={[
                   { value: 'maintenance', label: 'Maintien du poids' },
@@ -227,7 +233,7 @@ export function ComponentDemo() {
             </h2>
 
             <div className="flex gap-3">
-              <Button color="blue" onClick={() => setShowModal(true)}>
+              <Button variant="primary" onClick={() => setShowModal(true)}>
                 Ouvrir la modal
               </Button>
             </div>
@@ -239,13 +245,13 @@ export function ComponentDemo() {
               footer={
                 <>
                   <Button
-                    plain
+                    variant="ghost"
                     onClick={() => setShowModal(false)}
                   >
                     Annuler
                   </Button>
                   <Button
-                    color="blue"
+                    variant="primary"
                     onClick={() => setShowModal(false)}
                   >
                     Confirmer
@@ -291,7 +297,7 @@ export function ComponentDemo() {
               <p className="text-secondary-600 mb-4">
                 Prêt à tester le calculateur ?
               </p>
-              <Button color="blue" onClick={() => window.location.href = '/calculator'}>
+              <Button variant="primary" size="lg" onClick={() => window.location.href = '/calculator'}>
                 Aller au Calculateur →
               </Button>
             </div>
