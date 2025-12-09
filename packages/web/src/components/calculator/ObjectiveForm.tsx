@@ -75,7 +75,7 @@ export function ObjectiveForm({
             {(Object.keys(GOAL_LABELS) as Array<keyof typeof GOAL_LABELS>).map(
               (goal: keyof typeof GOAL_LABELS) => (
                 <button
-                  key={goal}
+                  key={goal as string}
                   type="button"
                   onClick={() => setFormData({ ...formData, goal })}
                   className={cn(
@@ -107,7 +107,7 @@ export function ObjectiveForm({
               >
             ).map((level: keyof typeof ACTIVITY_LEVEL_LABELS) => (
               <button
-                key={level}
+                key={level as string}
                 type="button"
                 onClick={() => setFormData({ ...formData, activityLevel: level })}
                 className={cn(
@@ -140,7 +140,7 @@ export function ObjectiveForm({
               >
             ).map((status: keyof typeof PHYSIOLOGICAL_STATUS_LABELS) => (
               <button
-                key={status}
+                key={status as string}
                 type="button"
                 onClick={() =>
                   setFormData({ ...formData, physiologicalStatus: status })
