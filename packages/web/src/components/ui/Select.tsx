@@ -59,7 +59,7 @@ export function Select({
           disabled={disabled}
           className={cn(
             'w-full px-3 py-2 border rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 appearance-none',
-            'focus-ring transition-colors',
+            'focus-ring focus:scale-[1.01] transition-all duration-150',
             'disabled:bg-secondary-100 dark:disabled:bg-secondary-700 disabled:cursor-not-allowed disabled:text-secondary-500 dark:disabled:text-secondary-400',
             hasError
               ? 'border-danger-500 focus:border-danger-500 focus:ring-danger-500'

@@ -65,7 +65,7 @@ export function Modal({
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 dark:bg-black/70 z-40 transition-opacity"
+        className="fixed inset-0 bg-black/50 dark:bg-black/70 z-40 animate-scale-in"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -76,7 +76,7 @@ export function Modal({
           {/* Modal panel */}
           <div
             className={cn(
-              'relative bg-white dark:bg-secondary-800 rounded-xl shadow-2xl w-full transform transition-all',
+              'relative bg-white dark:bg-secondary-800 rounded-xl shadow-2xl w-full animate-scale-in',
               sizeStyles[size]
             )}
             onClick={(e) => e.stopPropagation()}

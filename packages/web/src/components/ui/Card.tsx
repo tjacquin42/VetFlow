@@ -48,7 +48,7 @@ export function Card({
   };
 
   const clickableClass = onClick || hoverable
-    ? 'cursor-pointer hover:shadow-xl transition-shadow duration-200'
+    ? 'cursor-pointer hover:shadow-xl transition-shadow duration-200 animate-press'
     : '';
 
   return (

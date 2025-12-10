@@ -77,7 +77,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               type="button"
               onClick={() => setFormData({ ...formData, species: 'dog' })}
               className={cn(
-                'p-4 rounded-lg border-2 transition-all',
+                'p-4 rounded-lg border-2 transition-all duration-200 animate-press hover:scale-105',
                 formData.species === 'dog'
                   ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                   : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
@@ -90,7 +90,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               type="button"
               onClick={() => setFormData({ ...formData, species: 'cat' })}
               className={cn(
-                'p-4 rounded-lg border-2 transition-all',
+                'p-4 rounded-lg border-2 transition-all duration-200 animate-press hover:scale-105',
                 formData.species === 'cat'
                   ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                   : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
@@ -169,7 +169,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               type="button"
               onClick={() => setFormData({ ...formData, isNeutered: true })}
               className={cn(
-                'p-3 rounded-lg border-2 transition-all font-medium',
+                'p-3 rounded-lg border-2 transition-all duration-200 font-medium animate-press hover:scale-105',
                 formData.isNeutered
                   ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                   : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
@@ -181,7 +181,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               type="button"
               onClick={() => setFormData({ ...formData, isNeutered: false })}
               className={cn(
-                'p-3 rounded-lg border-2 transition-all font-medium',
+                'p-3 rounded-lg border-2 transition-all duration-200 font-medium animate-press hover:scale-105',
                 !formData.isNeutered
                   ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
                   : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'

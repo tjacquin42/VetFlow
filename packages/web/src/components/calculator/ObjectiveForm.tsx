@@ -81,7 +81,7 @@ export function ObjectiveForm({
                   type="button"
                   onClick={() => setFormData({ ...formData, goal })}
                   className={cn(
-                    'p-3 rounded-lg border-2 transition-all text-left',
+                    'p-3 rounded-lg border-2 transition-all duration-200 text-left animate-press hover:scale-105',
                     formData.goal === goal
                       ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
                       : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
@@ -113,7 +113,7 @@ export function ObjectiveForm({
                 type="button"
                 onClick={() => setFormData({ ...formData, activityLevel: level })}
                 className={cn(
-                  'p-3 rounded-lg border-2 transition-all text-center',
+                  'p-3 rounded-lg border-2 transition-all duration-200 text-center animate-press hover:scale-105',
                   formData.activityLevel === level
                     ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
                     : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
@@ -148,7 +148,7 @@ export function ObjectiveForm({
                   setFormData({ ...formData, physiologicalStatus: status })
                 }
                 className={cn(
-                  'p-3 rounded-lg border-2 transition-all text-left',
+                  'p-3 rounded-lg border-2 transition-all duration-200 text-left animate-press hover:scale-105',
                   formData.physiologicalStatus === status
                     ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
                     : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
