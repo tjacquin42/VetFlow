@@ -4,6 +4,7 @@ import { Calculator } from './pages/Calculator';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { ResetPassword } from './pages/ResetPassword';
+import { AuthConfirm } from './pages/AuthConfirm';
 import { Profile } from './pages/Profile';
 import { AuthGuard } from './components/auth/AuthGuard';
 import { Button, Card, DarkModeToggle } from './components/ui';
@@ -103,6 +104,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/auth/confirm" element={<AuthConfirm />} />
 
         {/* Calculator is accessible without authentication */}
         <Route path="/calculator" element={<Calculator />} />

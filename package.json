@@ -16,7 +16,11 @@
     "build:vercel": "pnpm --filter @vetflow/shared build && pnpm --filter @vetflow/web build && cp -r packages/web/dist ./dist",
     "lint": "pnpm --recursive lint",
     "type-check": "pnpm --recursive type-check",
-    "clean": "pnpm --recursive clean"
+    "clean": "pnpm --recursive clean",
+    "test": "pnpm --filter @vetflow/web test",
+    "test:all": "pnpm -r test",
+    "test:ui": "pnpm --filter @vetflow/web test:ui",
+    "test:coverage": "pnpm --filter @vetflow/web test:coverage"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
