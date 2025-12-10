@@ -31,6 +31,11 @@ export type {
 } from './types/calculation';
 
 export type {
+  CalculationHistoryEntry,
+  CalculationHistory,
+} from './types/history';
+
+export type {
   SubscriptionPlan,
   User,
   UpdateUserInput,

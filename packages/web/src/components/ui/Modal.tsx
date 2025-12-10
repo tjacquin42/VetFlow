@@ -65,7 +65,7 @@ export function Modal({
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 z-40 transition-opacity"
+        className="fixed inset-0 bg-black/50 dark:bg-black/70 z-40 transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -76,20 +76,20 @@ export function Modal({
           {/* Modal panel */}
           <div
             className={cn(
-              'relative bg-white rounded-xl shadow-2xl w-full transform transition-all',
+              'relative bg-white dark:bg-secondary-800 rounded-xl shadow-2xl w-full transform transition-all',
               sizeStyles[size]
             )}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-secondary-200">
-              <h3 className="text-xl font-semibold text-secondary-900">
+            <div className="flex items-center justify-between p-6 border-b border-secondary-200 dark:border-secondary-700">
+              <h3 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100">
                 {title}
               </h3>
               <button
                 type="button"
                 onClick={onClose}
-                className="text-secondary-400 hover:text-secondary-600 transition-colors focus-ring rounded-lg p-1"
+                className="text-secondary-400 dark:text-secondary-500 hover:text-secondary-600 dark:hover:text-secondary-300 transition-colors focus-ring rounded-lg p-1"
                 aria-label="Close modal"
               >
                 <svg
@@ -108,7 +108,7 @@ export function Modal({
 
             {/* Footer */}
             {footer && (
-              <div className="flex items-center justify-end gap-3 p-6 border-t border-secondary-200 bg-secondary-50 rounded-b-xl">
+              <div className="flex items-center justify-end gap-3 p-6 border-t border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-800 rounded-b-xl">
                 {footer}
               </div>
             )}

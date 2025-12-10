@@ -23,7 +23,7 @@ export function Spinner({
     lg: 'w-12 h-12',
   };
 
-  const colorClass = color || 'text-primary-600';
+  const colorClass = color || 'text-primary-600 dark:text-primary-400';
 
   return (
     <div

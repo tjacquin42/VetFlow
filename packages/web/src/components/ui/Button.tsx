@@ -35,13 +35,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      'bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white shadow-sm hover:shadow-md',
+      'bg-primary-600 hover:bg-primary-700 active:bg-primary-800 dark:bg-primary-500 dark:hover:bg-primary-600 dark:active:bg-primary-700 text-white shadow-sm hover:shadow-md',
     secondary:
-      'bg-secondary-200 hover:bg-secondary-300 active:bg-secondary-400 text-secondary-900',
+      'bg-secondary-200 hover:bg-secondary-300 active:bg-secondary-400 dark:bg-secondary-700 dark:hover:bg-secondary-600 dark:active:bg-secondary-500 text-secondary-900 dark:text-secondary-100',
     ghost:
-      'hover:bg-secondary-100 active:bg-secondary-200 text-secondary-700',
+      'hover:bg-secondary-100 active:bg-secondary-200 dark:hover:bg-secondary-700 dark:active:bg-secondary-600 text-secondary-700 dark:text-secondary-300',
     danger:
-      'bg-danger-600 hover:bg-danger-700 active:bg-danger-800 text-white shadow-sm hover:shadow-md',
+      'bg-danger-600 hover:bg-danger-700 active:bg-danger-800 dark:bg-danger-500 dark:hover:bg-danger-600 dark:active:bg-danger-700 text-white shadow-sm hover:shadow-md',
   };
 
   const sizeStyles = {

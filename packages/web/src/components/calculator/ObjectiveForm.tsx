@@ -12,19 +12,21 @@ import { cn } from '@/lib/utils';
 
 export interface ObjectiveFormProps {
   animalInfo: AnimalInfo;
+  initialData?: Partial<ObjectiveData>;
   onCalculate: (objectiveData: ObjectiveData) => void;
   onBack: () => void;
 }
 
 export function ObjectiveForm({
   animalInfo,
+  initialData,
   onCalculate,
   onBack,
 }: ObjectiveFormProps) {
   const [formData, setFormData] = useState<Partial<ObjectiveData>>({
-    goal: 'maintenance',
-    activityLevel: 'moderate',
-    physiologicalStatus: 'normal',
+    goal: initialData?.goal || 'maintenance',
+    activityLevel: initialData?.activityLevel || 'moderate',
+    physiologicalStatus: initialData?.physiologicalStatus || 'normal',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -54,8 +56,8 @@ export function ObjectiveForm({
     <Card title="Objectif nutritionnel" subtitle="Étape 2/2">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Animal summary */}
-        <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
-          <p className="text-sm text-primary-900">
+        <div className="bg-primary-50 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-700 rounded-lg p-4">
+          <p className="text-sm text-primary-900 dark:text-primary-200">
             <span className="font-medium">
               {animalInfo.name || 'Animal'} - {animalInfo.species === 'dog' ? 'Chien' : 'Chat'}
             </span>
@@ -68,7 +70,7 @@ export function ObjectiveForm({
 
         {/* Goal */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-3">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-3">
             Objectif nutritionnel <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -81,8 +83,8 @@ export function ObjectiveForm({
                   className={cn(
                     'p-3 rounded-lg border-2 transition-all text-left',
                     formData.goal === goal
-                      ? 'border-primary-500 bg-primary-50 text-primary-700 font-medium'
-                      : 'border-secondary-300 hover:border-secondary-400'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
+                      : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
                   )}
                 >
                   {GOAL_LABELS[goal]}
@@ -97,7 +99,7 @@ export function ObjectiveForm({
 
         {/* Activity Level */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-3">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-3">
             Niveau d'activité <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-3 gap-3">
@@ -113,8 +115,8 @@ export function ObjectiveForm({
                 className={cn(
                   'p-3 rounded-lg border-2 transition-all text-center',
                   formData.activityLevel === level
-                    ? 'border-primary-500 bg-primary-50 text-primary-700 font-medium'
-                    : 'border-secondary-300 hover:border-secondary-400'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
+                    : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
                 )}
               >
                 {ACTIVITY_LEVEL_LABELS[level]}
@@ -130,7 +132,7 @@ export function ObjectiveForm({
 
         {/* Physiological Status */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-3">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-3">
             Statut physiologique <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -148,8 +150,8 @@ export function ObjectiveForm({
                 className={cn(
                   'p-3 rounded-lg border-2 transition-all text-left',
                   formData.physiologicalStatus === status
-                    ? 'border-primary-500 bg-primary-50 text-primary-700 font-medium'
-                    : 'border-secondary-300 hover:border-secondary-400'
+                    ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-medium'
+                    : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
                 )}
               >
                 {PHYSIOLOGICAL_STATUS_LABELS[status]}

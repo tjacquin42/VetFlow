@@ -1,18 +1,18 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { ComponentDemo } from './pages/ComponentDemo';
 import { Calculator } from './pages/Calculator';
-import { Button, Card } from './components/ui';
+import { Button, Card, DarkModeToggle } from './components/ui';
 
 function Home() {
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900">
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-primary-600 mb-4">
+          <h1 className="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-4">
             VetFlow
           </h1>
-          <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary-600 dark:text-secondary-300 max-w-2xl mx-auto">
             Calculateur de nutrition vétérinaire moderne et intuitif
           </p>
         </header>
@@ -59,14 +59,14 @@ function Home() {
         {/* Features */}
         <div className="max-w-4xl mx-auto mt-12">
           <Card>
-            <h3 className="text-xl font-semibold text-secondary-900 mb-4">
+            <h3 className="text-xl font-semibold text-secondary-900 dark:text-secondary-100 mb-4">
               Fonctionnalités à venir
             </h3>
-            <ul className="space-y-2 text-secondary-600">
+            <ul className="space-y-2 text-secondary-600 dark:text-secondary-300">
               <li>✅ Calcul du Besoin Énergétique (BE)</li>
+              <li>✅ Sauvegarde des calculs</li>
+              <li>✅ Historique des patients</li>
               <li>🔄 Sélection de croquettes par marque</li>
-              <li>🔄 Sauvegarde des calculs</li>
-              <li>🔄 Historique des patients</li>
               <li>🔄 Export PDF des résultats</li>
             </ul>
           </Card>
@@ -78,11 +78,14 @@ function Home() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/demo" element={<ComponentDemo />} />
-      <Route path="/calculator" element={<Calculator />} />
-    </Routes>
+    <>
+      <DarkModeToggle />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/demo" element={<ComponentDemo />} />
+        <Route path="/calculator" element={<Calculator />} />
+      </Routes>
+    </>
   );
 }
 

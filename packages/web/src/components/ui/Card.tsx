@@ -36,9 +36,9 @@ export function Card({
   ...props
 }: CardProps) {
   const variantStyles = {
-    default: 'bg-white border border-secondary-200',
-    outlined: 'bg-white border-2 border-primary-500',
-    elevated: 'bg-white shadow-lg border border-secondary-100',
+    default: 'bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700',
+    outlined: 'bg-white dark:bg-secondary-800 border-2 border-primary-500 dark:border-primary-600',
+    elevated: 'bg-white dark:bg-secondary-800 shadow-lg dark:shadow-2xl border border-secondary-100 dark:border-secondary-700',
   };
 
   const paddingStyles = {
@@ -67,12 +67,12 @@ export function Card({
       {(title || subtitle) && (
         <div className="mb-4">
           {title && (
-            <h3 className="text-lg font-semibold text-secondary-900">
+            <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-100">
               {title}
             </h3>
           )}
           {subtitle && (
-            <p className="text-sm text-secondary-500 mt-1">{subtitle}</p>
+            <p className="text-sm text-secondary-500 dark:text-secondary-400 mt-1">{subtitle}</p>
           )}
         </div>
       )}
@@ -82,7 +82,7 @@ export function Card({
 
       {/* Footer */}
       {footer && (
-        <div className="mt-4 pt-4 border-t border-secondary-200">{footer}</div>
+        <div className="mt-4 pt-4 border-t border-secondary-200 dark:border-secondary-700">{footer}</div>
       )}
     </div>
   );

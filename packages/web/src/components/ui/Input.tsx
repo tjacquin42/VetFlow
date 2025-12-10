@@ -49,7 +49,7 @@ export function Input({
   return (
     <div className="flex flex-col gap-1.5">
       {/* Label */}
-      <label className="text-sm font-medium text-secondary-700">
+      <label className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
         {label}
         {required && <span className="text-danger-500 ml-1">*</span>}
       </label>
@@ -58,7 +58,7 @@ export function Input({
       <div className="relative">
         {/* Left icon */}
         {leftIcon && (
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400 dark:text-secondary-500">
             {leftIcon}
           </div>
         )}
@@ -74,14 +74,14 @@ export function Input({
           max={max}
           step={step}
           className={cn(
-            'w-full px-3 py-2 border rounded-lg text-secondary-900 placeholder:text-secondary-400',
+            'w-full px-3 py-2 border rounded-lg bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 placeholder:text-secondary-400 dark:placeholder:text-secondary-500',
             'focus-ring transition-colors',
-            'disabled:bg-secondary-100 disabled:cursor-not-allowed disabled:text-secondary-500',
+            'disabled:bg-secondary-100 dark:disabled:bg-secondary-700 disabled:cursor-not-allowed disabled:text-secondary-500',
             leftIcon && 'pl-10',
             unit && 'pr-12',
             hasError
               ? 'border-danger-500 focus:border-danger-500 focus:ring-danger-500'
-              : 'border-secondary-300 focus:border-primary-500 focus:ring-primary-500',
+              : 'border-secondary-300 dark:border-secondary-600 focus:border-primary-500 focus:ring-primary-500',
             className
           )}
           {...props}
@@ -89,7 +89,7 @@ export function Input({
 
         {/* Unit suffix */}
         {unit && (
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary-500 text-sm font-medium">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-secondary-500 dark:text-secondary-400 text-sm font-medium">
             {unit}
           </div>
         )}
@@ -97,7 +97,7 @@ export function Input({
 
       {/* Error or hint message */}
       {error && (
-        <p className="text-sm text-danger-500 flex items-center gap-1">
+        <p className="text-sm text-danger-500 dark:text-danger-400 flex items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -113,7 +113,7 @@ export function Input({
           {error}
         </p>
       )}
-      {hint && !error && <p className="text-sm text-secondary-500">{hint}</p>}
+      {hint && !error && <p className="text-sm text-secondary-500 dark:text-secondary-400">{hint}</p>}
     </div>
   );
 }

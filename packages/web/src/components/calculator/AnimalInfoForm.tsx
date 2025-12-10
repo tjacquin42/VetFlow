@@ -69,7 +69,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Espèce */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
             Espèce <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -79,8 +79,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all',
                 formData.species === 'dog'
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
+                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                  : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
               )}
             >
               <div className="text-3xl mb-1">🐕</div>
@@ -92,8 +92,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               className={cn(
                 'p-4 rounded-lg border-2 transition-all',
                 formData.species === 'cat'
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
+                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                  : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
               )}
             >
               <div className="text-3xl mb-1">🐈</div>
@@ -124,7 +124,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Âge */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
             Âge <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -161,7 +161,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Stérilisé */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
             Stérilisé(e) ? <span className="text-danger-500">*</span>
           </label>
           <div className="grid grid-cols-2 gap-3">
@@ -171,8 +171,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               className={cn(
                 'p-3 rounded-lg border-2 transition-all font-medium',
                 formData.isNeutered
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
+                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                  : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
               )}
             >
               Oui
@@ -183,8 +183,8 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
               className={cn(
                 'p-3 rounded-lg border-2 transition-all font-medium',
                 !formData.isNeutered
-                  ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-secondary-300 hover:border-secondary-400'
+                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                  : 'border-secondary-300 dark:border-secondary-600 hover:border-secondary-400 dark:hover:border-secondary-500 text-secondary-700 dark:text-secondary-300'
               )}
             >
               Non
@@ -194,7 +194,7 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
 
         {/* Score corporel */}
         <div>
-          <label className="block text-sm font-medium text-secondary-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
             Score corporel (1-9) <span className="text-danger-500">*</span>
           </label>
           <div className="space-y-3">
@@ -209,11 +209,11 @@ export function AnimalInfoForm({ onNext, initialData }: AnimalInfoFormProps) {
                   bodyScore: parseInt(e.target.value),
                 })
               }
-              className="w-full h-2 bg-secondary-200 rounded-lg appearance-none cursor-pointer"
+              className="w-full h-2 bg-secondary-200 dark:bg-secondary-700 rounded-lg appearance-none cursor-pointer"
             />
-            <div className="flex justify-between text-sm text-secondary-600">
+            <div className="flex justify-between text-sm text-secondary-600 dark:text-secondary-400">
               <span>1 (maigre)</span>
-              <span className="font-medium text-primary-600">
+              <span className="font-medium text-primary-600 dark:text-primary-400">
                 {formData.bodyScore}/9 - {bodyScoreDescriptions[formData.bodyScore || 5]}
               </span>
               <span>9 (obèse)</span>

@@ -10,14 +10,14 @@ export function ComponentDemo() {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-12">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900 py-12">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Hero Section */}
         <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-secondary-900 mb-4">
+          <h1 className="text-4xl font-bold text-secondary-900 dark:text-secondary-100 mb-4">
             Démo des Composants UI
           </h1>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-secondary-300 max-w-2xl mx-auto">
             Showcase de tous les composants réutilisables de VetFlow.
             Testez les interactions et visualisez les différentes variantes.
           </p>
@@ -26,14 +26,14 @@ export function ComponentDemo() {
         <div className="space-y-12">
           {/* Button Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Buttons
             </h2>
 
             <div className="space-y-6">
               {/* Variants */}
               <div>
-                <h3 className="text-lg font-medium text-secondary-700 mb-3">
+                <h3 className="text-lg font-medium text-secondary-700 dark:text-secondary-300 mb-3">
                   Variants
                 </h3>
                 <div className="flex flex-wrap gap-3">
@@ -46,7 +46,7 @@ export function ComponentDemo() {
 
               {/* Sizes */}
               <div>
-                <h3 className="text-lg font-medium text-secondary-700 mb-3">
+                <h3 className="text-lg font-medium text-secondary-700 dark:text-secondary-300 mb-3">
                   Sizes
                 </h3>
                 <div className="flex flex-wrap items-center gap-3">
@@ -64,7 +64,7 @@ export function ComponentDemo() {
 
               {/* Loading State */}
               <div>
-                <h3 className="text-lg font-medium text-secondary-700 mb-3">
+                <h3 className="text-lg font-medium text-secondary-700 dark:text-secondary-300 mb-3">
                   Loading State
                 </h3>
                 <div className="flex flex-wrap gap-3">
@@ -88,7 +88,7 @@ export function ComponentDemo() {
 
           {/* Input Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Inputs
             </h2>
 
@@ -135,13 +135,13 @@ export function ComponentDemo() {
 
           {/* Card Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Cards
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card title="Default Card" subtitle="Variant par défaut">
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 dark:text-secondary-300">
                   Ceci est une carte par défaut avec bordure simple.
                 </p>
               </Card>
@@ -151,7 +151,7 @@ export function ComponentDemo() {
                 subtitle="Bordure accentuée"
                 variant="outlined"
               >
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 dark:text-secondary-300">
                   Carte avec bordure bleue accentuée pour mettre en avant.
                 </p>
               </Card>
@@ -161,7 +161,7 @@ export function ComponentDemo() {
                 subtitle="Avec ombre"
                 variant="elevated"
               >
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 dark:text-secondary-300">
                   Carte avec ombre portée pour effet de profondeur.
                 </p>
               </Card>
@@ -179,13 +179,13 @@ export function ComponentDemo() {
                   </div>
                 }
               >
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 dark:text-secondary-300">
                   Carte avec un footer pour des actions.
                 </p>
               </Card>
 
               <Card title="Hoverable Card" hoverable>
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 dark:text-secondary-300">
                   Passez la souris pour voir l'effet hover.
                 </p>
               </Card>
@@ -194,7 +194,7 @@ export function ComponentDemo() {
 
           {/* Select Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Select
             </h2>
 
@@ -228,7 +228,7 @@ export function ComponentDemo() {
 
           {/* Modal Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Modal
             </h2>
 
@@ -259,42 +259,42 @@ export function ComponentDemo() {
                 </>
               }
             >
-              <p className="text-secondary-600">
+              <p className="text-secondary-600 dark:text-secondary-300">
                 Ceci est le contenu de la modal. Vous pouvez placer n'importe
                 quel contenu ici.
               </p>
-              <p className="text-secondary-600 mt-4">
-                Utilisez la touche <kbd className="px-2 py-1 bg-secondary-100 rounded">ESC</kbd> pour fermer.
+              <p className="text-secondary-600 dark:text-secondary-300 mt-4">
+                Utilisez la touche <kbd className="px-2 py-1 bg-secondary-100 dark:bg-secondary-700 rounded">ESC</kbd> pour fermer.
               </p>
             </Modal>
           </section>
 
           {/* Spinner Section */}
           <section>
-            <h2 className="text-2xl font-semibold text-secondary-900 mb-6">
+            <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-100 mb-6">
               Spinner
             </h2>
 
             <div className="flex items-center gap-8">
               <div className="text-center">
                 <Spinner size="sm" />
-                <p className="text-sm text-secondary-600 mt-2">Small</p>
+                <p className="text-sm text-secondary-600 dark:text-secondary-400 mt-2">Small</p>
               </div>
               <div className="text-center">
                 <Spinner size="md" />
-                <p className="text-sm text-secondary-600 mt-2">Medium</p>
+                <p className="text-sm text-secondary-600 dark:text-secondary-400 mt-2">Medium</p>
               </div>
               <div className="text-center">
                 <Spinner size="lg" />
-                <p className="text-sm text-secondary-600 mt-2">Large</p>
+                <p className="text-sm text-secondary-600 dark:text-secondary-400 mt-2">Large</p>
               </div>
             </div>
           </section>
 
           {/* Navigation */}
-          <section className="pt-8 border-t">
+          <section className="pt-8 border-t border-secondary-200 dark:border-secondary-700">
             <div className="text-center">
-              <p className="text-secondary-600 mb-4">
+              <p className="text-secondary-600 dark:text-secondary-300 mb-4">
                 Prêt à tester le calculateur ?
               </p>
               <Button variant="primary" size="lg" onClick={() => window.location.href = '/calculator'}>
