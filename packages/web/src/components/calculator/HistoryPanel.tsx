@@ -30,7 +30,7 @@ export function HistoryPanel({ history, onLoad, onDelete }: HistoryPanelProps) {
       {/* Toggle button */}
       <button
         onClick={handleToggle}
-        className="fixed left-4 top-4 p-3 rounded-full bg-secondary-200 dark:bg-secondary-700 hover:bg-secondary-300 dark:hover:bg-secondary-600 hover:scale-105 transition-all duration-200 animate-press shadow-md z-50 flex items-center gap-2"
+        className="fixed left-4 top-4 p-3 rounded-full bg-secondary-200 dark:bg-secondary-700 hover:bg-secondary-300 dark:hover:bg-secondary-600 hover:scale-105 duration-200 animate-press shadow-md z-50 flex items-center gap-2"
         aria-label="Ouvrir l'historique"
       >
         <span className="text-xl">📊</span>
@@ -44,7 +44,7 @@ export function HistoryPanel({ history, onLoad, onDelete }: HistoryPanelProps) {
         <div className="fixed inset-0 z-50">
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-scale-in"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-scale-in animate-scale-out [animation-duration:100ms]"
             onClick={handleToggle}
           />
 
