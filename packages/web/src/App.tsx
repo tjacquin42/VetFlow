@@ -22,10 +22,10 @@ function Home() {
           <Card variant="elevated" hoverable>
             <div className="text-center p-6">
               <div className="text-5xl mb-4">🧮</div>
-              <h2 className="text-2xl font-semibold text-secondary-900 mb-3">
+              <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-400 mb-3">
                 Calculateur BE
               </h2>
-              <p className="text-secondary-600 mb-6">
+              <p className="text-secondary-600 mb-6 dark:text-secondary-300">
                 Calculez le besoin énergétique journalier de vos animaux en
                 quelques étapes simples.
               </p>
@@ -40,10 +40,10 @@ function Home() {
           <Card variant="elevated" hoverable>
             <div className="text-center p-6">
               <div className="text-5xl mb-4">🎨</div>
-              <h2 className="text-2xl font-semibold text-secondary-900 mb-3">
+              <h2 className="text-2xl font-semibold text-secondary-900 dark:text-secondary-400 mb-3">
                 Démo Composants
               </h2>
-              <p className="text-secondary-600 mb-6">
+              <p className="text-secondary-600 mb-6 dark:text-secondary-300">
                 Découvrez tous les composants UI disponibles avec des exemples
                 interactifs.
               </p>
