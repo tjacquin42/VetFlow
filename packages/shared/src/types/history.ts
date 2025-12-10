@@ -1,6 +1,5 @@
-import type { AnimalInfo } from './animal';
-import type { ObjectiveData } from './objective';
-import type { EnergyResult } from './energy';
+import type { AnimalInfo, ObjectiveData } from './animal';
+import type { EnergyResult } from './calculation';
 
 export interface CalculationHistoryEntry {
   id: string;
