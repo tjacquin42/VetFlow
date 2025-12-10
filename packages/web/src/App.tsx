@@ -1,6 +1,11 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { ComponentDemo } from './pages/ComponentDemo';
 import { Calculator } from './pages/Calculator';
+import { Login } from './pages/Login';
+import { Signup } from './pages/Signup';
+import { ResetPassword } from './pages/ResetPassword';
+import { Profile } from './pages/Profile';
+import { AuthGuard } from './components/auth/AuthGuard';
 import { Button, Card, DarkModeToggle } from './components/ui';
 
 function Home() {
@@ -9,6 +14,18 @@ function Home() {
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <header className="text-center mb-12">
+          <div className="flex justify-end mb-4 gap-3">
+            <Link to="/login">
+              <Button variant="secondary" size="sm">
+                Se connecter
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="primary" size="sm">
+                S'inscrire
+              </Button>
+            </Link>
+          </div>
           <h1 className="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-4">
             VetFlow
           </h1>
@@ -83,7 +100,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<ComponentDemo />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* Calculator is accessible without authentication */}
         <Route path="/calculator" element={<Calculator />} />
+
+        {/* Protected routes */}
+        <Route path="/profile" element={
+          <AuthGuard>
+            <Profile />
+          </AuthGuard>
+        } />
       </Routes>
     </>
   );

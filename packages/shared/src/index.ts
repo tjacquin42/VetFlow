@@ -42,6 +42,13 @@ export type {
   UsageTracking,
 } from './types/user';
 
+export type {
+  AuthUser,
+  SignUpCredentials,
+  SignInCredentials,
+  ResetPasswordCredentials,
+} from './types/auth';
+
 // Export formulas
 export {
   calculateRER,
