@@ -9,10 +9,11 @@ import {
 import { AnimalInfoForm } from '@/components/calculator/AnimalInfoForm';
 import { ObjectiveForm } from '@/components/calculator/ObjectiveForm';
 import { BEResult } from '@/components/calculator/BEResult';
+import { CroquetteRecommendations } from '@/components/calculator/CroquetteRecommendations';
 import { HistoryPanel } from '@/components/calculator/HistoryPanel';
 import { useCalculationHistory } from '@/hooks/useCalculationHistory';
 
-type Step = 1 | 2 | 'result';
+type Step = 1 | 2 | 'result' | 'recommendations';
 
 export function Calculator() {
   const [step, setStep] = useState<Step>(1);
@@ -59,6 +60,14 @@ export function Calculator() {
     setObjectiveData(null);
     setResult(null);
     setStep(1);
+  };
+
+  const handleViewRecommendations = () => {
+    setStep('recommendations');
+  };
+
+  const handleBackToResult = () => {
+    setStep('result');
   };
 
   const handleLoadFromHistory = (entry: CalculationHistoryEntry) => {
@@ -163,6 +172,16 @@ export function Calculator() {
               result={result}
               animalInfo={animalInfo}
               onBackToObjectives={handleBackToObjectives}
+              onNewCalculation={handleNewCalculation}
+              onViewRecommendations={handleViewRecommendations}
+            />
+          )}
+
+          {step === 'recommendations' && result && animalInfo && (
+            <CroquetteRecommendations
+              result={result}
+              animalInfo={animalInfo}
+              onBack={handleBackToResult}
               onNewCalculation={handleNewCalculation}
             />
           )}

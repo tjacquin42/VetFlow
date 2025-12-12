@@ -1,0 +1,32 @@
+[
+  {
+    "brand": "Exemple Marque",
+    "name": "Adult Poulet Premium",
+    "range": "Exemple Range",
+    "species": "dog",
+    "type": "Adult",
+    "kcal_per_100g": 380,
+    "protein": 28.0,
+    "fat": 15.0,
+    "fiber": 2.5,
+    "product_url": "https://www.example.com/product",
+    "approximate_price": 4.50,
+    "availability": "france",
+    "is_active": true
+  },
+  {
+    "brand": "Exemple Marque",
+    "name": "Sterilised Chat Saumon",
+    "range": "Exemple Range",
+    "species": "cat",
+    "type": "Sterilised",
+    "kcal_per_100g": 370,
+    "protein": 35.0,
+    "fat": 12.0,
+    "fiber": 3.5,
+    "product_url": "https://www.example.com/product-cat",
+    "approximate_price": 5.20,
+    "availability": "france",
+    "is_active": true
+  }
+]

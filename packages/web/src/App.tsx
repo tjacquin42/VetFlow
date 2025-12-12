@@ -8,6 +8,7 @@ import { AuthConfirm } from './pages/AuthConfirm';
 import { Profile } from './pages/Profile';
 import { AuthGuard } from './components/auth/AuthGuard';
 import { Button, Card, DarkModeToggle } from './components/ui';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 function Home() {
   return (
@@ -96,7 +97,7 @@ function Home() {
 
 function App() {
   return (
-    <>
+    <ErrorBoundary>
       <DarkModeToggle />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -116,7 +117,7 @@ function App() {
           </AuthGuard>
         } />
       </Routes>
-    </>
+    </ErrorBoundary>
   );
 }
 

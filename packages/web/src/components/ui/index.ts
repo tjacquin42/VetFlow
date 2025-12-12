@@ -22,3 +22,6 @@ export { Spinner } from './Spinner';
 export type { SpinnerProps } from './Spinner';
 
 export { DarkModeToggle } from './DarkModeToggle';
+
+export { ErrorDisplay } from './ErrorDisplay';
+export type { ErrorDisplayProps } from './ErrorDisplay';

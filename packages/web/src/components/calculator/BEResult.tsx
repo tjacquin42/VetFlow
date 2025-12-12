@@ -6,6 +6,7 @@ export interface BEResultProps {
   animalInfo: AnimalInfo;
   onBackToObjectives: () => void;
   onNewCalculation: () => void;
+  onViewRecommendations: () => void;
 }
 
 export function BEResult({
@@ -13,6 +14,7 @@ export function BEResult({
   animalInfo,
   onBackToObjectives,
   onNewCalculation,
+  onViewRecommendations,
 }: BEResultProps) {
   return (
     <div className="space-y-6">
@@ -148,10 +150,10 @@ export function BEResult({
         <Button
           variant="primary"
           size="lg"
-          disabled
+          onClick={onViewRecommendations}
           className="flex-1"
         >
-          💾 Sauvegardé
+          🍖 Voir les croquettes recommandées
         </Button>
       </div>
     </div>

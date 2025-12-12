@@ -61,3 +61,50 @@ export interface CroquetteFilters {
   /** Search query */
   query?: string;
 }
+
+/**
+ * Enhanced kibble recommendation with calculated quantities
+ */
+export interface CroquetteRecommendation {
+  /** The kibble product */
+  croquette: Croquette;
+  /** Daily quantity needed in grams */
+  dailyQuantityGrams: number;
+  /** Quantity per meal in grams (default 2 meals/day) */
+  quantityPerMeal: number;
+  /** Daily cost in euros */
+  dailyCost: number;
+  /** Monthly cost in euros (30 days) */
+  monthlyCost: number;
+  /** Optional match score for ranking */
+  matchScore?: number;
+}
+
+/**
+ * Filters for kibble recommendations
+ */
+export interface CroquetteRecommendationFilters {
+  /** Filter by brands (multiple selection) */
+  brands?: string[];
+  /** Filter by types (multiple selection) */
+  types?: string[];
+  /** Minimum daily price in euros */
+  minPrice?: number;
+  /** Maximum daily price in euros */
+  maxPrice?: number;
+  /** Minimum protein percentage */
+  minProtein?: number;
+  /** Maximum kcal per 100g */
+  maxKcal?: number;
+}
+
+/**
+ * Sort options for kibble recommendations
+ */
+export type CroquetteSortBy =
+  | 'price-asc'
+  | 'price-desc'
+  | 'kcal-asc'
+  | 'kcal-desc'
+  | 'protein-desc'
+  | 'match-score';

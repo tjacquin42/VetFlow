@@ -20,10 +20,12 @@
     "test": "pnpm --filter @vetflow/web test",
     "test:all": "pnpm -r test",
     "test:ui": "pnpm --filter @vetflow/web test:ui",
-    "test:coverage": "pnpm --filter @vetflow/web test:coverage"
+    "test:coverage": "pnpm --filter @vetflow/web test:coverage",
+    "import:croquettes": "tsx scripts/import-croquettes.ts"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "tsx": "^4.21.0",
     "typescript": "^5.3.3"
   },
   "engines": {
