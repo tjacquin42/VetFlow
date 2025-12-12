@@ -21,6 +21,8 @@ export interface User {
   phone?: string;
   /** Current subscription plan */
   plan: SubscriptionPlan;
+  /** Number of calculations this week (optional) */
+  calculations?: number;
   /** Subscription start date (optional) */
   subscriptionDate?: string;
   /** Subscription expiry date (optional) */

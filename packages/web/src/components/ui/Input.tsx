@@ -6,7 +6,7 @@ export interface InputProps
   /** Input label */
   label: string;
   /** Input type */
-  type?: 'text' | 'email' | 'password' | 'number';
+  type?: 'text' | 'email' | 'password' | 'number' | 'tel';
   /** Current value */
   value: string | number;
   /** Change handler */

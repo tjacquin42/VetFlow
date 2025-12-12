@@ -113,7 +113,7 @@ export function CroquetteRecommendations({
  */
 function getTopRecommendations(
   recommendations: CroquetteRecommendation[],
-  animalInfo: AnimalInfo
+  _animalInfo: AnimalInfo
 ): CroquetteRecommendation[] {
   if (recommendations.length === 0) return [];
 

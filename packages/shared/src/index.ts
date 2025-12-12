@@ -21,6 +21,9 @@ export type {
   KibbleSpecies,
   Croquette,
   CroquetteFilters,
+  CroquetteRecommendation,
+  CroquetteRecommendationFilters,
+  CroquetteSortBy,
 } from './types/croquette';
 
 export type {

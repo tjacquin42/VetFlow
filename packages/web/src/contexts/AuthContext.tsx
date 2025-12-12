@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Session, AuthError, User as SupabaseUser } from '@supabase/supabase-js';
+import { Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import type { User, UpdateUserInput } from '@vetflow/shared';
 
